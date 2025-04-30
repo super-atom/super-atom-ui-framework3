@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../partials/meta}}
+    {{> ../partials/link}}
+    {{> ../partials/guide}}
+    {{> ../partials/script}}
+    <link rel="stylesheet" href="styles/guide.css" />
+    <title>Component</title>
+  </head>
+  <body class="page-guide">
+    <header class="header">
+      <h1 class="header__title">Component</h1>
+      <div class="btn-wrap">
+        <a href="codingList.html" class="button" data-type="default">List</a>
+        <a href="foundation.html" class="button" data-type="default"
+          >Foundation</a
+        >
+        <a href="module.html" class="button" data-type="default">Module</a>
+      </div>
+    </header>
+    <div class="content">
+      <div class="wrapper">
+        <section class="section section-button">
+          <div class="section__header">
+            <h2 class="section__title">Button</h2>
+            <div class="section__desc">버튼</div>
+          </div>
+          <div class="section__content">
+            <button class="button" data-type="default">default button</button>
+            <button class="button" data-type="text">text button</button>
+            <button class="button" data-type="round">round button</button>
+            <button class="button" data-type="round-reverse">
+              round-reverse button
+            </button>
+            <button class="button" data-type="outlined">outlined button</button>
+          </div>
+        </section>
+        <section class="section section-text-field">
+          <div class="section__header">
+            <h2 class="section__title">Text field</h2>
+            <div class="section__desc">텍스트 필드</div>
+          </div>
+          <div class="section__content"></div>
+        </section>
+        <section class="section section-input">
+          <div class="section__header">
+            <h2 class="section__title">Input</h2>
+            <p class="section__desc">인풋</p>
+          </div>
+          <div class="section__content">
+            <div class="item-wrap">
+              <input class="input width-100" type="text" />
+              <input
+                class="input width-100"
+                type="text"
+                data-form-state="normal"
+                value="normal state"
+              />
+              <input
+                class="input width-100"
+                type="text"
+                placeholder="disabled input"
+                disabled=""
+              />
+              <input
+                class="input width-100"
+                type="text"
+                placeholder="텍스트 입력"
+                value="읽기 전용 텍스트"
+                readonly=""
+              />
+              <input
+                class="input width-100"
+                type="text"
+                data-form-state="hover"
+                value="hover state"
+              />
+              <input
+                class="input width-100"
+                type="text"
+                data-form-state="focus"
+                value="focus state"
+              />
+              <input
+                class="input width-100"
+                type="text"
+                data-form-state="valid"
+                value="valid state"
+              />
+              <input
+                class="input width-100"
+                type="text"
+                data-form-state="invalid"
+                value="invalid state"
+              />
+              <div class="input-wrap">
+                <label for="inputColor">Color</label>
+                <input class="full-input input" id="inputColor" type="color" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputDate">Date</label>
+                <input class="full-input input" id="inputDate" type="date" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputDatetime">Datetime</label>
+                <input
+                  class="full-input input"
+                  id="inputDatetime"
+                  type="datetime"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="inputDatetimeLocal">Datetime Local</label>
+                <input
+                  class="full-input input"
+                  id="inputDatetimeLocal"
+                  type="datetime-local"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="inputEmail">Email</label>
+                <input class="full-input input" id="inputEmail" type="email" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputMonth">Month</label>
+                <input class="full-input input" id="inputMonth" type="month" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputNumber">Number</label>
+                <input class="full-input input" id="inputNumer" type="number" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputPassword">Password</label>
+                <input
+                  class="full-input input"
+                  id="inputPassword"
+                  type="password"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="inputSearch">Search</label>
+                <input
+                  class="full-input input"
+                  id="inputSearch"
+                  type="search"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="inputTel">Tel</label>
+                <input class="full-input input" id="inputTel" type="tel" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputText">Text</label>
+                <input class="full-input input" id="inputText" type="text" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputTime">Time</label>
+                <input class="full-input input" id="inputTime" type="time" />
+              </div>
+              <div class="input-wrap">
+                <label for="inputUrl">Url</label>
+                <input class="full-input input" id="inputUrl" type="url" />
+              </div>
+              <div class="input-wrap">
+                <label for="textarea">Textarea</label>
+                <textarea class="textarea" id="textarea"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section-check">
+          <div class="section__header">
+            <h2 class="section__title">Checkbox & Radio Button</h2>
+            <p class="section__desc">체크박스 & 라디오버튼</p>
+          </div>
+          <div class="section__content">
+            <div class="item-wrap">
+              <div class="input-checkbox-wrap">
+                <input
+                  class="input-checkbox"
+                  id="chk-01"
+                  type="checkbox"
+                  name="chk"
+                  checked=""
+                />
+                <label for="chk-01">체크박스 checked</label>
+              </div>
+              <div class="input-checkbox-wrap">
+                <input
+                  class="input-checkbox"
+                  id="chk-02"
+                  type="checkbox"
+                  name="chk"
+                />
+                <label for="chk-02">체크박스</label>
+              </div>
+              <div class="input-checkbox-wrap">
+                <input
+                  class="input-checkbox"
+                  id="chk-03"
+                  type="checkbox"
+                  name="chk"
+                  disabled=""
+                />
+                <label for="chk-03">체크박스 disabled</label>
+              </div>
+            </div>
+
+            <div class="item-wrap">
+              <div class="input-radio-wrap">
+                <input
+                  class="input-radio"
+                  id="radio-01"
+                  type="radio"
+                  name="radio"
+                  checked=""
+                />
+                <label for="radio-01">라디오 checked</label>
+              </div>
+              <div class="input-radio-wrap">
+                <input
+                  class="input-radio"
+                  id="radio-02"
+                  type="radio"
+                  name="radio"
+                />
+                <label for="radio-02">라디오</label>
+              </div>
+              <div class="input-radio-wrap">
+                <input
+                  class="input-radio"
+                  id="radio-03"
+                  type="radio"
+                  name="radio"
+                  disabled=""
+                />
+                <label for="radio-03">라디오 disabled</label>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section-select">
+          <div class="section__header">
+            <h2 class="section__title">Select</h2>
+            <p class="section__desc">셀렉트</p>
+          </div>
+          <div class="section__content">
+            <select name="" class="select" id="">
+              <option value="0">옵션을 선택하세요</option>
+              <option value="1">옵션1</option>
+              <option value="2">옵션2</option>
+            </select>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

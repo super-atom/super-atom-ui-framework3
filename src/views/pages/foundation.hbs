@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../partials/meta}}
+    {{> ../partials/link}}
+    {{> ../partials/guide}}
+    {{> ../partials/script}}
+    <title>Foundation</title>
+  </head>
+  <body class="page-guide">
+    <header class="header">
+      <h1 class="header__title">Foundation</h1>
+      <div class="btn-wrap">
+        <a href="codingList.html" class="button" data-type="default">List</a>
+        <a href="component.html" class="button" data-type="default"
+          >Component</a
+        >
+        <a href="module.html" class="button" data-type="default">Module</a>
+      </div>
+    </header>
+    <div class="content">
+      <div class="wrapper">
+        <section class="section section-color">
+          <div class="section__header">
+            <h2 class="section__title">Color</h2>
+            <p class="section__desc">컬러</p>
+          </div>
+          <div class="section__content">
+            <div class="color-wrap">
+              {{#each grays}}
+              <div
+                class="color color-grayscale"
+                style="background-color:{{ this }}"
+              >
+                <span class="txt">{{uppercase 'Gray'}}</span>
+                <span class="num">{{inc @index 1}}</span>
+              </div>
+              {{/each}}
+            </div>
+            <div class="color-wrap">
+              {{#with colors}}
+              <div
+                class="color color-primary color-main"
+                style="background-color:{{ primary }}"
+              >
+                <span class="txt">Primary</span>
+                <span class="desc">Brown</span>
+              </div>
+              <div
+                class="color color-primary color-sub"
+                style="background-color:{{ sub }}"
+              >
+                <span class="txt">Primary</span>
+                <span class="desc">Ivory</span>
+              </div>
+              {{/with}}
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-typeface">
+          <div class="section__header">
+            <h2 class="section__title">Typeface</h2>
+            <p class="section__desc">타입페이스</p>
+          </div>
+          <div class="section__content">
+            <div class="item-wrap typeface-wrap">
+              <div class="typeface typeface-base">
+                {{#for 0 5 1}}
+                <p class="item">
+                  스포카 한 산스 네오 Spoqa Han Sans Neo<br />
+                  가나다라마바사아자차카타파하<br />
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+                  abcdefghijklmnopqrstuvwxyz<br />
+                  1234567890#*&-_
+                </p>
+                {{/for}}
+              </div>
+              <div class="typeface typeface-body">
+                {{#for 0 5 1}}
+                <p class="item">
+                  나눔스퀘어 네오 Nanum Square Neo<br />
+                  가나다라마바사아자차카타파하<br />
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+                  abcdefghijklmnopqrstuvwxyz<br />
+                  1234567890#*&-_
+                </p>
+                {{/for}}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-typography">
+          <div class="section__header">
+            <h2 class="section__title">Typography</h2>
+            <p class="section__desc">타이포그래피</p>
+          </div>
+          <div class="section__content">
+            <div class="item-wrap font-wrap">
+              <div class="font font-heading">
+                <h3 class="section__subtitle">Heading</h3>
+                <p class="font-heading-1">Heading1</p>
+                <p class="font-heading-2">Heading2</p>
+                <p class="font-heading-3">Heading3</p>
+                <p class="font-heading-4">Heading4</p>
+              </div>
+              <div class="font font-body">
+                <h3 class="section__subtitle">Body</h3>
+                <p class="font-body-1-r">Body1 R</p>
+                <p class="font-body-1-m">Body1 M</p>
+                <p class="font-body-1-b">Body1 B</p>
+                <p class="font-body-2-r">Body2 R</p>
+                <p class="font-body-2-b">Body2 B</p>
+                <p class="font-body-3">Body3 R</p>
+              </div>
+              <div class="font font-body">
+                <h3 class="section__subtitle">Caption</h3>
+                <p class="font-caption">Caption</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-grid">
+          <div class="section__header">
+            <h2 class="section__title">Grid</h2>
+            <p class="section__desc">그리드</p>
+          </div>
+          <div class="section__content">
+            <div class="grid row">
+              {{#for 0 12 1}}
+              <div
+                class="grid-column col-xs-12 col-sm-6 col-md-3 col-lg-2 col-xl-1"
+              >
+                <div class="grid-item">1</div>
+              </div>
+              {{/for}}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

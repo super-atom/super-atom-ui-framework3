@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: hsl(49, 100%, 7%);
+  --color-link: hsl(49, 100%, 7%);
+  --color-line: hsl(49, 23%, 90%);
+  --color-tag: hsl(49, 22%, 88%);
+}
+
+.test {
+  @apply text-primary p-[30px] text-[20px];
+}

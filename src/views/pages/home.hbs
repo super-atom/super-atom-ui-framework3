@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../partials/meta}}
+    {{> ../partials/script}}
+    <script src="js/home.js"></script>
+    {{> ../partials/link}}
+    <title>Home</title>
+  </head>
+  <body class="page page-home">
+    {{> ../partials/header}}
+    <div class="content" id="content">
+      <ul>
+        {{#for 1 10 1}}
+        <li>
+          <p class="test">{{uppercase "hello"}}</p>
+        </li>
+        {{/for}}
+      </ul>
+      <p class="text-primary p-[30px] text-[20px]">BPBP</p>
+    </div>
+    {{> ../partials/footer}}
+  </body>
+</html>
