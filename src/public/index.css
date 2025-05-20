@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Malgun Gothic',
+    '맑은 고딕',
+    Verdana,
+    Tahoma,
+    '돋움',
+    Dotum,
+    '굴림',
+    Gulim,
+    Geneva,
+    sans-serif,
+    Apple Gothic,
+    AppleGothic;
+}
+li {
+  list-style: none;
+}
+body {
+  font-size: 13px;
+}
+a {
+  color: #444;
+  text-decoration: none;
+}
+a:hover {
+  color: #aaa;
+}
+a:visited,
+a:focus,
+a:active {
+  color: #aaa;
+}
+.is-emphasis {
+  color: #ff4040;
+  font-weight: 700;
+}
+.is-emphasis.is-mwk {
+  color: #1919ff;
+}
+.index-wrap {
+  box-sizing: border-box;
+  padding: 20px;
+  min-width: 1900px;
+  min-height: 100vh;
+}
+.index-title {
+  margin: 0 0 20px;
+  font-size: 30px;
+  line-height: 40px;
+}
+#statusList {
+  display: flex;
+}
+
+#statusList > li {
+  padding: 0 20px 0 20px;
+  min-width: 100px;
+}
+.index-links:before {
+  display: table;
+  content: '';
+}
+.index-links__inner {
+  margin: -10px 0 0 -10px;
+}
+.index-links__inner:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.index-links a {
+  display: block;
+  float: left;
+  margin: 10px 0 0 10px;
+  border-radius: 5px;
+  background: #666;
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+.index-gnb {
+  margin: 20px 0;
+}
+.index-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  width: 100%;
+  min-width: 1900px;
+}
+.index-bottom a {
+  background-color: #004e42;
+}
+.index-section + .index-section {
+  margin-top: 20px;
+}
+.index-section--clicked {
+  -webkit-animation: index-section-clicked 0.8s linear;
+  animation: index-section-clicked 0.8s linear;
+  border-radius: 5px;
+}
+@-webkit-keyframes index-section-clicked {
+  0% {
+    background-color: rgba(255, 202, 222, 0);
+  }
+  30% {
+    background-color: rgba(255, 202, 222, 0.3);
+  }
+  70% {
+    background-color: rgba(255, 202, 222, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 202, 222, 0);
+  }
+}
+@keyframes index-section-clicked {
+  0% {
+    background-color: rgba(255, 202, 222, 0);
+  }
+  30% {
+    background-color: rgba(255, 202, 222, 0.3);
+  }
+  70% {
+    background-color: rgba(255, 202, 222, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 202, 222, 0);
+  }
+}
+.index-section__title {
+  margin: 0;
+  border-radius: 5px 5px 0 0;
+  background: #333;
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+.index-table > table {
+  box-sizing: border-box;
+  margin: 0;
+  border-spacing: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+.index-table > table > thead > tr > th,
+.index-table > table > tbody > tr > th,
+.index-table > table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 0 solid #cdcdcd;
+  border-width: 0 1px 1px 0;
+  background: none;
+  padding: 5px 15px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+.index-table > table > tbody > tr:not(.is_hide):hover > th,
+.index-table > table > tbody > tr:not(.is_hide):hover > td {
+  background-color: #f6f6f6;
+}
+.index-table > table > thead > tr > th:first-child,
+.index-table > table > tbody > tr > th:first-child,
+.index-table > table > tbody > tr > td:first-child {
+  border-left-width: 1px;
+}
+.index-table > table > thead > tr > th {
+  border-top-width: 1px;
+}
+.index-table > table > thead > tr > th,
+.index-table > table > tbody > tr > th {
+  background-color: #e8e8e8;
+}
+.index-table > table > tbody > tr:last-child > td:first-child {
+  border-radius: 0 0 0 5px;
+}
+.index-table > table > tbody > tr:last-child > td:last-child {
+  border-radius: 0 0 5px 0;
+}
+/* .index-table > table > tbody > tr.is_hide {
+        background-color: #f2fffd;
+      } */
+.index-table > table > tbody > tr.is_hide {
+  display: none;
+}
+.index-table > table > tbody > tr td.is_transparent {
+  color: transparent !important;
+}
+.index-status {
+  display: block;
+  margin: -3px 0;
+  border-radius: 5px;
+  background: #999;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+}
+.index-status--progress {
+  background-color: #efab3c;
+}
+.index-status--confirm {
+  background-color: #50dd2c;
+}
+.index-status--end {
+  background-color: #009178;
+}
+.index-status--modify {
+  background-color: #dc231e;
+}
+.index-status--hold {
+  background-color: #9b9b9b;
+  color: #fff;
+}
+.index-status--except {
+  background-color: #474747;
+  color: #fff;
+}
+.index-status--pending {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+.index-log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.index-log__item {
+  position: relative;
+}
+.index-text {
+  margin-bottom: 20px;
+}
+.index-type {
+  color: #2b5cd9;
+}
+
+.tabs {
+  display: table;
+  margin-bottom: 20px;
+  width: 100%;
+  table-layout: fixed;
+}
+.tabs a {
+  display: table-cell;
+  position: relative;
+  transition: all 0.3s;
+  border-right: solid 1px #fff;
+  background: #eee;
+  padding: 10px 0;
+  color: #666;
+  font-weight: bold;
+  text-align: center;
+}
+.tabs a:last-child {
+  border: none;
+}
+.tabs a.on,
+.tabs a:hover {
+  background: #00907f;
+  color: #fff;
+}
+.tabs i {
+  display: inline-block;
+  transition: all 0.3s;
+  margin-left: 5px;
+  background: #dc231e;
+  width: 14px;
+  height: 13px;
+  color: #fff;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+}
+.tabs a.on i,
+.tabs a:hover i {
+  background: #fff;
+  color: #00907f;
+}
+
+.marker {
+  margin: -4px 0 23px;
+}
+.marker li {
+  position: relative;
+  float: left;
+  padding: 0 20px 0 20px;
+  font-size: 12px;
+}
+.marker li:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 15px;
+  height: 15px;
+  content: '';
+}
+.marker li.m2:before {
+  background: #ddf2fd;
+}
+.marker li.m3:before {
+  background: #ffcfd0;
+}
+.marker li.m4:before {
+  border-color: #ccc;
+  background: #ddd;
+}
+.marker li.m5:before {
+  background: #d9eac8;
+}
+.marker:after {
+  display: block;
+  clear: both;
+  height: 0;
+  content: '';
+}
+
+td.common-id {
+  position: relative;
+  padding-right: 50px !important;
+}
+td.common-id:after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: 1px solid #004e42;
+  background: #d7ede6;
+  padding: 0 3px;
+  width: 22px;
+  content: '공통';
+  font-size: 11px;
+  text-align: center;
+}

@@ -1,17 +1,17 @@
-import { merge } from "webpack-merge";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
-import common from "./webpack.common.mjs";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import { cssLoaders } from "./util.js";
+import { merge } from 'webpack-merge';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import common from './webpack.common.mjs';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { cssLoaders } from './util.js';
 
 const configureOptimization = () => {
   return {
-    minimize: false,
+    minimize: true,
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     splitChunks: {
-      chunks: "async",
+      chunks: 'async',
       minSize: 20000,
       minRemainingSize: 0,
       minChunks: 1,
@@ -35,8 +35,8 @@ const configureOptimization = () => {
 };
 
 export default merge(common, {
-  mode: "production",
-  target: "browserslist",
+  mode: 'production',
+  target: 'browserslist',
   module: {
     rules: [
       {
@@ -45,7 +45,7 @@ export default merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "../",
+              publicPath: '../',
             },
           },
           ...cssLoaders,
@@ -56,12 +56,11 @@ export default merge(common, {
   optimization: configureOptimization(),
   plugins: [
     new CleanWebpackPlugin({
-      dry: false,
       verbose: true,
     }),
     new MiniCssExtractPlugin({
-      filename: "styles/[name].css",
-      chunkFilename: "styles/[name].css",
+      filename: 'styles/[name].css',
+      chunkFilename: 'styles/[name].css',
     }),
   ],
 });

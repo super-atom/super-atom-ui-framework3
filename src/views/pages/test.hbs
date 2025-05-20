@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../partials/meta}}
+    {{> ../partials/link}}
+    {{> ../partials/script}}
+    <title>Sample User Info</title>
+  </head>
+  <body>
+    {{> ../layouts/layout content='test'}}
+    {{#> ../partials/myPartial}}
+    <p>이 부분이 partial block으로 전달됩니다!!!</p>
+    {{/../partials/myPartial}}
+  </body>
+</html>

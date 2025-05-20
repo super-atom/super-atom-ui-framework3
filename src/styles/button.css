@@ -1,0 +1,61 @@
+.btn {
+  &-type-primary {
+    @apply text-white bg-btn-primary-default hover:bg-btn-primary-pressed disabled:bg-btn-primary-disabled;
+
+    &[disabled]:hover {
+      @apply hover:bg-btn-primary-disabled;
+    }
+  }
+
+  &-type-secondary {
+    @apply text-gray-80 bg-btn-secondary-default hover:bg-btn-secondary-pressed disabled:bg-btn-secondary-disabled;
+
+    &[disabled]:hover {
+      @apply hover:bg-btn-secondary-disabled;
+    }
+  }
+
+  &-type-point {
+    @apply text-btn-primary-default bg-btn-point-default hover:bg-btn-point-pressed disabled:bg-btn-point-disabled;
+
+    &[disabled]:hover {
+      @apply hover:bg-btn-point-disabled;
+    }
+  }
+}
+
+.btn-size {
+  font-weight: 600;
+
+  &-xs {
+    border-radius: 6px;
+    padding: 0 12px;
+    height: 32px;
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+
+  &-sm {
+    border-radius: 8px;
+    padding: 0 16px;
+    height: 44px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  &-md {
+    border-radius: 10px;
+    padding: 0 18px;
+    height: 56px;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  &-lg {
+    border-radius: 12px;
+    padding: 0 24px;
+    height: 66px;
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+}

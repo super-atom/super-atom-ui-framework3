@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="public/vendor/jquery-3.6.4.min.js"></script>
+    <script src="public/index.js"></script>
+    <link rel="stylesheet" href="public/index.css" />
+    <title>INDEX</title>
+    <!-- //style -->
+  </head>
+  <body>
+    <div class="index-wrap">
+      <h1 class="index-title"></h1>
+      <p>진행상태</p>
+      <select name="" id="statusSelect">
+        <option value=""></option>
+      </select>
+
+      <ul id="statusList">
+        <li class="status-list">
+          전체 : <span class="quantity"></span>건
+          <span class="percentage"></span>
+        </li>
+      </ul>
+
+      <div class="index-bottom">
+        <div class="index-links">
+          <div class="index-links__inner" id="nav"></div>
+        </div>
+      </div>
+
+      <div class="index-datas" id="indexTable"></div>
+    </div>
+
+    <div class="index-fake-botttom"></div>
+  </body>
+</html>

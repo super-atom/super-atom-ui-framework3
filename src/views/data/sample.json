@@ -1,0 +1,45 @@
+{
+  "user": {
+    "id": 101,
+    "name": "홍길동",
+    "email": "honggildong@example.com",
+    "isActive": true,
+    "createdAt": "2025-05-16T10:30:00Z"
+  },
+  "orders": [
+    {
+      "orderId": "ORD-1001",
+      "date": "2025-05-15",
+      "totalAmount": 89000,
+      "status": "배송중",
+      "items": [
+        {
+          "productId": "P-001",
+          "productName": "화이트 오버사이즈 셔츠",
+          "quantity": 1,
+          "price": 39000
+        },
+        {
+          "productId": "P-005",
+          "productName": "블랙 슬림핏 슬랙스",
+          "quantity": 1,
+          "price": 50000
+        }
+      ]
+    },
+    {
+      "orderId": "ORD-1002",
+      "date": "2025-04-30",
+      "totalAmount": 45000,
+      "status": "배송완료",
+      "items": [
+        {
+          "productId": "P-003",
+          "productName": "베이직 무지 티셔츠",
+          "quantity": 3,
+          "price": 15000
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,76 @@
 @import 'tailwindcss';
-
 @theme {
-  --color-primary: hsl(49, 100%, 7%);
-  --color-link: hsl(49, 100%, 7%);
-  --color-line: hsl(49, 23%, 90%);
-  --color-tag: hsl(49, 22%, 88%);
+  --font-pretendard:
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+
+  /*PrimaryColors*/
+  --color-primary-1: #009178;
+  --color-primary-2: #148071;
+
+  /* Point Colors */
+  --color-point-charcoal: #282a2c;
+
+  /* Semantic Colors */
+  --color-semantic-error: #f44242;
+  --color-semantic-notice: #ff6868;
+  --color-semantic-warning: #ff8515;
+  --color-semantic-caution: #ffbd15;
+  --color-semantic-general: #3ac392;
+  --color-semantic-success: #2c91ee;
+
+  /* Gray Scale */
+  --color-gray-white: #ffffff;
+  --color-gray-3: #f7f9fb;
+  --color-gray-5: #eff2f5;
+  --color-gray-10: #e6e9eb;
+  --color-gray-15: #dadde1;
+  --color-gray-20: #cccfd4;
+  --color-gray-30: #babfc7;
+  --color-gray-40: #acafb5;
+  --color-gray-50: #999da6;
+  --color-gray-60: #7d818a;
+  --color-gray-70: #696c75;
+  --color-gray-80: #56585e;
+  --color-gray-90: #43464a;
+  --color-gray-95: #282a2c;
+  --color-gray-black: #1a1b1c;
+
+  /* Contents/Background */
+  --color-bg-white: #ffffff;
+  --color-bg-gray: #f4f4f4;
+  --color-overlay-scrim: rgba(0, 0, 0, 0.7);
+
+  /* Button Primary */
+  --color-btn-primary-default: #009178;
+  --color-btn-primary-pressed: #148071;
+  --color-btn-primary-disabled: rgba(0, 145, 120, 0.3);
+
+  /* Button Secondary */
+  --color-btn-secondary-default: #eff2f5;
+  --color-btn-secondary-pressed: #e6e9eb;
+  --color-btn-secondary-disabled: rgba(239, 242, 245, 0.5);
+
+  /* Button Point */
+  --color-btn-point-default: #d7ede6;
+  --color-btn-point-pressed: #c3e7df;
+  --color-btn-point-disabled: rgba(224, 243, 237, 0.5);
+
+  /* Sub Colors */
+  --color-sub-white-default: #ffffff;
+  --color-sub-white-pressed: #f5f8fa;
+  --color-sub-white-disabled: #ffffff80;
+  --color-sub-black-default: #56585e;
+  --color-sub-black-pressed: #43464a;
+  --color-sub-black-disabled: #56585e80;
 }
 
-.test {
-  @apply text-primary p-[30px] text-[20px];
+@font-face {
+  font-style: normal;
+  font-weight: 45 920;
+  src: url('../assets/fonts/PretendardVariable.woff2')
+    format('woff2-variations');
+  font-family: 'Pretendard Variable';
+  font-display: swap;
 }
