@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../../partials/meta}}
+    {{> ../../partials/link}}
+    {{> ../../partials/script}}
+    <title>Form</title>
+  </head>
+  <body class="p-[20px]">
+    <p class="mb-[10px] text-[40px] font-bold">Form</p>
+    <div class="space-y-[30px]">
+      <div>
+        <p class="text-title-1 mb-[10px] text-[20px] font-bold">Input</p>
+        <div class="flex flex-col gap-[10px]">
+          {{>../components/InputText
+          id="id" name="name" label="Enabled" placeholder="Text"}}
+          {{>../components/InputText
+          id="id" name="name" label="Required" placeholder="Text" required=true}}
+          {{>../components/InputText
+          id="id" name="name" label="with Button" placeholder="Text" hideBtnInputDelete=true
+          addEl="<div class='addEl'><button class='btn btn-type-sub btn-size-sm'>Button</button></div>"}}
+          {{>../components/InputText
+          id="id" name="name" label="Disabled" placeholder="Text" disabled=true}}
+          {{>../components/InputText
+          id="id" name="name" label="Readonly" placeholder="Text" value="Text" readonly=true}}
+          {{>../components/InputText
+          id="id" name="name" label="Error" placeholder="Text" error=true helpText="Error message"}}
+        </div>
+      </div>
+      <div>
+        <p class="text-title-1 mb-[10px] text-[20px] font-bold">Input Type</p>
+        <div class="flex flex-col gap-[10px]">
+          {{>../components/InputText
+          id="id" name="name" label="Text"}}
+          {{>../components/InputTextNum
+          id="id" name="name" label="Number Text"}}
+          {{>../components/InputPhoneNum label="Phone Number" }}
+          {{>../components/InputRegNum
+            id="id" name="regNum" label="Registration Number" }}
+          {{>../components/InputSmsAuth
+            id="id" name="name" label="SMS Auth" }}
+          {{>../components/InputCaptcha
+            id="id" name="name" label="Captcha" }}
+          {{>../components/InputPassword
+            id="id" name="name" label="Password" placeholder="비밀번호를 입력해 주세요"}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

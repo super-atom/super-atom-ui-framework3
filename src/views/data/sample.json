@@ -1,43 +1,126 @@
 {
-  "user": {
-    "id": 101,
-    "name": "홍길동",
-    "email": "honggildong@example.com",
-    "isActive": true,
-    "createdAt": "2025-05-16T10:30:00Z"
-  },
-  "orders": [
+  "floors": [
     {
-      "orderId": "ORD-1001",
-      "date": "2025-05-15",
-      "totalAmount": 89000,
-      "status": "배송중",
-      "items": [
+      "name": "1F",
+      "status": {
+        "level": "congested",
+        "label": "혼잡"
+      },
+      "spaces": [
         {
-          "productId": "P-001",
-          "productName": "화이트 오버사이즈 셔츠",
-          "quantity": 1,
-          "price": 39000
+          "name": "Main Hall",
+          "image": "tfactory-space-main-hall",
+          "status": {
+            "level": "congested",
+            "label": "혼잡"
+          }
         },
         {
-          "productId": "P-005",
-          "productName": "블랙 슬림핏 슬랙스",
-          "quantity": 1,
-          "price": 50000
+          "name": "Way to Light",
+          "image": "tfactory-space-way-to-light",
+          "status": {
+            "level": "caution",
+            "label": "주의"
+          }
         }
       ]
     },
     {
-      "orderId": "ORD-1002",
-      "date": "2025-04-30",
-      "totalAmount": 45000,
-      "status": "배송완료",
-      "items": [
+      "name": "2F",
+      "status": {
+        "level": "caution",
+        "label": "주의"
+      },
+      "spaces": [
         {
-          "productId": "P-003",
-          "productName": "베이직 무지 티셔츠",
-          "quantity": 3,
-          "price": 15000
+          "name": "Flex Hall",
+          "image": "tfactory-space-flex-hall",
+          "status": {
+            "level": "congested",
+            "label": "혼잡"
+          }
+        },
+        {
+          "name": "AI Circle",
+          "image": "tfactory-space-ai-circle",
+          "status": {
+            "level": "caution",
+            "label": "주의"
+          }
+        },
+        {
+          "name": "The Lounge",
+          "image": "tfactory-space-the-lounge",
+          "status": {
+            "level": "smooth",
+            "label": "원활"
+          }
+        }
+      ]
+    },
+    {
+      "name": "B1F",
+      "status": {
+        "level": "normal",
+        "label": "보통"
+      },
+      "spaces": [
+        {
+          "name": "The Stage",
+          "image": "tfactory-space-the-stage",
+          "status": {
+            "level": "smooth",
+            "label": "원활"
+          }
+        },
+        {
+          "name": "Goods Zone",
+          "image": "tfactory-space-goods-zone",
+          "status": {
+            "level": "normal",
+            "label": "보통"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rooftop & Outdoor",
+      "status": {
+        "level": "smooth",
+        "label": "원활"
+      },
+      "spaces": [
+        {
+          "name": "The Rooftop",
+          "image": "tfactory-space-the-rooftop",
+          "status": {
+            "level": "smooth",
+            "label": "원활"
+          }
+        },
+        {
+          "name": "The Ground",
+          "image": "tfactory-space-the-ground",
+          "status": {
+            "level": "normal",
+            "label": "보통"
+          }
+        },
+        {
+          "name": "The Archive",
+          "image": "tfactory-space-the-archive",
+          "status": {
+            "level": "smooth",
+            "label": "원활"
+          }
+        },
+        {
+          "name": "The Garden",
+          "image": "tfactory-space-the-garden",
+          "status": {
+            "level": "smooth",
+            "label": "원활"
+          }
         }
       ]
     }

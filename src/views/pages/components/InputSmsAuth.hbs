@@ -1,0 +1,29 @@
+<div class="InputContainer InputSmsAuthContainer {{#if class}}{{class}}{{/if}}" data-state="{{#if error}}error{{else}}valid{{/if}}">
+  {{#if label}}
+    <div class="InputText__label-wrap">
+      <label for="{{ id }}" class="InputText__label">{{ label }}</label>
+      {{#if required}}<div class="required-asterisk ml-[4px]"></div>{{/if}}
+    </div>
+  {{/if}}
+  <div class="InputWrapper">
+    <input
+      type="text"
+      name="{{ name }}"
+      placeholder="인증번호 (숫자 6자리)"
+      aria-label="인증번호 (숫자 6자리)"
+      pattern="[0-9]*"
+      inputmode="numeric"
+      maxlength="6"
+      required
+      class="InputSmsAuth input"
+      {{#if disabled}}disabled{{/if}}
+      {{#if readonly}}readonly tabindex="-1"{{/if}}
+    />
+    <div class='addEl'><button class='btn btn-type-sub btn-size-sm'>재전송</button></div>
+  </div>
+  <div class="flex items-center justify-between mt-[10px] px-[8px]">
+    <p class="text-body-6 text-gray-50">인증번호 미발송시 재전송 버튼을 눌러 주세요.</p>
+    <p class="text-body-6 text-semantic-red">03:00</p>
+  </div>
+  <p class="Input__help-text !mt-[6px]">잘못된 인증번호 입니다. 다시 시도해 주세요.</p>
+</div>

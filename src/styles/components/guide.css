@@ -1,0 +1,35 @@
+/** Guide Components */
+@layer components {
+  .ColorChip {
+    @apply relative w-[200px] h-[100px] shadow-[0px_4px_10px_0px_rgba(38,49,103,0.10)] rounded-t-[8px] rounded-b-[16px];
+
+    &__text {
+      @apply absolute bottom-0 w-full h-[50%] p-[12px] bg-white rounded-b-[8px] border-t border-[#EAEAEA];
+    }
+  }
+}
+
+.nice-select {
+  @apply bg-[url('../assets/images/icon_tablet_select.svg')] bg-no-repeat bg-[center_right_14px] cursor-pointer relative flex h-[40px] px-[14px] items-center rounded-[12px] bg-gray-5 text-gray-black outline-1 outline-transparent transition duration-300 placeholder:text-gray-50;
+  @apply focus-within:bg-white focus-within:outline-black focus-within:shadow-[0px_4px_10px_0px_rgba(0,0,0,0.10)];
+
+  &.open {
+    @apply bg-[url('../assets/images/icon_tablet_select--open.svg')];
+  }
+
+  .nice-select-dropdown {
+    @apply mt-[4px] w-full [box-shadow:0px_4px_10px_0px_rgba(0,0,0,0.10)] rounded-[12px];
+
+    ul {
+      @apply py-[12px];
+    }
+
+    li {
+      @apply flex items-center px-[14px] h-[30px] text-body-6 text-gray-60;
+
+      &.selected {
+        @apply text-gray-black font-medium;
+      }
+    }
+  }
+}

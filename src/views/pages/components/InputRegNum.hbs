@@ -1,0 +1,44 @@
+<div class="InputContainer InputRegNumContainer {{#if class}}{{class}}{{/if}}" data-state="{{#if error}}error{{else}}valid{{/if}}">
+  {{#if label}}
+    <div class="InputText__label-wrap">
+      <label for="{{ id }}" class="InputText__label">{{ label }}</label>
+      {{#if required}}<div class="required-asterisk ml-[4px]"></div>{{/if}}
+    </div>
+  {{/if}}
+  <div class="InputWrapper">
+    <div class="InputRegNum__front-wrap">
+      <input
+        type="text"
+        name="{{ name }}"
+        placeholder="주민번호 앞 6자리"
+        aria-label="주민번호 앞 6자리"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="6"
+        required
+        class="InputRegNum InputRegNum__front input"
+        {{#if disabled}}disabled{{/if}}
+        {{#if readonly}}readonly tabindex="-1"{{/if}}
+      />
+    </div>
+    <span class="InputRegNum__separator">-</span>
+    <div class="InputRegNum__back-wrap">
+      <input
+        type="text"
+        name="{{ name }}"
+        placeholder="&#9675;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+        aria-label="주민등록번호 뒤 7자리"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="1"
+        required
+        class="InputRegNum InputRegNum__back input"
+        {{#if disabled}}disabled{{/if}}
+        {{#if readonly}}readonly tabindex="-1"{{/if}}
+      />
+    </div>
+  </div>
+  {{#if helpText}}
+    <p class="Input__help-text">{{ helpText }}</p>
+  {{/if}}
+</div>

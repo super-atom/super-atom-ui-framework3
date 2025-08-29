@@ -1,0 +1,45 @@
+<div class="InputContainer InputTextAreaContainer {{#if class}}{{class}}{{/if}}" data-state="{{#if error}}error{{else}}valid{{/if}}">
+  {{#if label}}
+    <div class="InputText__label-wrap">
+      <label for="{{ id }}" class="InputText__label">{{ label }}</label>
+      {{#if required}}<div class="required-asterisk ml-[4px]"></div>{{/if}}
+    </div>
+  {{/if}}
+  <div class="InputWrapper">
+    <textarea
+      name="{{ name }}"
+      id="{{ id }}"
+      class="InputText input"
+      placeholder="{{ placeholder }}"
+      {{#if rows}}value={{rows}}{{/if}}
+      {{#if cols}}value={{cols}}{{/if}}
+      {{#if value}}value={{value}}{{/if}}
+      {{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
+      {{#if minlength}}minlength="{{minlength}}"{{/if}}
+      {{#if disabled}}disabled{{/if}}
+      {{#if readonly}}readonly tabindex="-1"{{/if}}
+      {{#if required}}required{{/if}}
+      style="height: {{#if height}}{{height}}px{{/if}};"
+    ></textarea>
+    {{#if addEl}}{{{addEl}}}{{/if}}
+    {{#unless readonly}}
+    {{#unless disabled}}
+    {{#unless hideBtnInputDelete}}
+    <button type="button" class="hidden btn-input-delete" tabindex="-1"><span class="sr-only">입력값 삭제</span></button>
+    {{/unless}}
+    {{/unless}}
+    {{/unless}}
+  </div>
+  <div>
+    {{#if helpText}}
+      <p class="Input__help-text">{{ helpText }}</p>
+    {{/if}}
+    {{#unless hideTextCount}}
+      <p class="InputTextArea__counter flex justify-end text-body-6 text-gray-50 my-[10px] px-[8px]">
+        <span class="current">0</span>
+        <span>/</span>
+        <span class="maximum">{{maxlength}}</span>
+      </p>
+    {{/unless}}
+  </div>
+</div>

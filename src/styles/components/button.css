@@ -1,0 +1,115 @@
+/** Button */
+button {
+  @apply cursor-pointer;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center font-semibold leading-[140%] tracking-[-0.28px] transition duration-300;
+
+  &[class*='btn-type-'] {
+    @apply rounded-[100px];
+  }
+
+  &-type-primary {
+    @apply text-white bg-btn-dark-default hover:bg-btn-dark-pressed disabled:bg-btn-dark-disabled;
+
+    &[disabled] {
+      @apply text-white;
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-dark-disabled) 50%,
+        transparent
+      );
+    }
+    &[disabled]:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-dark-disabled) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-type-secondary {
+    @apply text-gray-95 bg-btn-gray-default hover:bg-btn-gray-pressed rounded-full disabled:bg-btn-gray-disabled;
+
+    &[disabled] {
+      @apply text-[#22232680];
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-gray-disabled) 50%,
+        transparent
+      );
+    }
+    &[disabled]:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-gray-disabled) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-type-sub {
+    @apply text-gray-80 bg-btn-white-default hover:bg-btn-white-pressed disabled:bg-btn-white-disabled rounded-full border-1 border-gray-20;
+
+    &[disabled] {
+      @apply text-[#22232680] border-gray-10;
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-white-disabled) 50%,
+        transparent
+      );
+    }
+    &[disabled]:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-white-disabled) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-type-point {
+    @apply text-gray-95 bg-btn-white-default hover:bg-btn-white-pressed disabled:bg-btn-white-disabled rounded-full border-1 border-gray-60;
+
+    &[disabled] {
+      @apply text-[#22232680] border-[#22232680];
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-white-disabled) 50%,
+        transparent
+      );
+    }
+    &[disabled]:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-btn-white-disabled) 50%,
+        transparent
+      );
+    }
+  }
+
+  &-type-text {
+    @apply text-gray-80 bg-transparent;
+
+    &[disabled] {
+      @apply text-[rgba(74,76,81,0.5)];
+      background-color: color-mix(in srgb, '#4a4c51' 50%, transparent);
+    }
+  }
+}
+
+.btn-size {
+  &-lg {
+    @apply h-[48px] px-[20px] text-[14px] font-semibold;
+  }
+
+  &-md {
+    @apply h-[36px] px-[14px] text-[12px] font-semibold;
+  }
+
+  &-sm {
+    @apply h-[26px] px-[10px] text-[10px] font-medium;
+  }
+}

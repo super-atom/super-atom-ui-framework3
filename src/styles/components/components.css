@@ -1,0 +1,102 @@
+@import './guide.css';
+@import './button.css';
+@import './form.css';
+
+/** Layout */
+@layer components {
+  .header {
+  }
+
+  .footer {
+  }
+
+  .content {
+  }
+}
+
+/** Modal */
+@layer components {
+  .Modal {
+    @apply z-110 fixed top-1/2 left-1/2 -translate-1/2 rounded-[20px] bg-white duration-300 mx-auto hidden;
+
+    &.open {
+      @apply block;
+    }
+
+    &__btn-close {
+      @apply absolute right-[20px] top-[32.5px] w-[20px] h-[20px] bg-[url('../assets/images/icon_modal-close.svg')] bg-no-repeat;
+    }
+
+    &__dim {
+      @apply fixed inset-0 z-[-1] bg-black/50 opacity-0 pointer-events-none duration-300 w-full h-full cursor-pointer;
+
+      &.active {
+        @apply opacity-100 pointer-events-auto z-109;
+      }
+    }
+
+    &__title {
+      @apply text-title-4;
+    }
+  }
+}
+
+/** Modal Alert */
+@layer components {
+  .ModalAlert {
+    @apply z-1201 fixed top-1/2 left-1/2 -translate-1/2 rounded-[20px] bg-white duration-300 w-[328px] mx-auto hidden h-max;
+
+    &.open {
+      @apply block;
+    }
+
+    &__dim {
+      @apply fixed inset-0 z-[-1] bg-black/50 opacity-0 pointer-events-none duration-300 w-full h-full cursor-pointer;
+
+      &.active {
+        @apply opacity-100 pointer-events-auto z-1200;
+      }
+    }
+
+    &__title {
+      @apply text-title-4 px-[20px] pt-[30px] text-center;
+    }
+
+    &__content {
+      @apply px-[20px] pt-[10px] pb-[24px] text-center;
+    }
+  }
+}
+
+/** Common Components */
+@layer components {
+  /** Accordion Menu */
+  .accordion-container {
+    @apply relative;
+  }
+
+  .accordion-item {
+    @apply border-0;
+  }
+
+  .accordion-header {
+    @apply w-full border-0 bg-transparent p-0 text-left cursor-pointer;
+  }
+
+  .accordion-content {
+    @apply overflow-hidden transition-all duration-200 ease-in-out;
+    max-height: 0;
+
+    &.accordion-open {
+      max-height: max-content;
+    }
+
+    &.hidden {
+      @apply !max-h-0;
+    }
+  }
+
+  .accordion-icon {
+    @apply transition-transform duration-200 ease-in-out;
+  }
+}

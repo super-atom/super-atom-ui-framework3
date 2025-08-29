@@ -33,7 +33,6 @@ export default merge(common, {
     open: true,
     port: ENV.server.port,
     liveReload: true,
-    hot: true,
     host: 'localhost',
   },
   watchOptions: {
@@ -57,6 +56,5 @@ export default merge(common, {
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(false),
     }),
-    new webpack.HotModuleReplacementPlugin({}),
   ],
 });

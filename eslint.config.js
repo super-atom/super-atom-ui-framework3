@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import tailwind from 'eslint-plugin-tailwindcss';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
@@ -18,4 +19,5 @@ export default defineConfig([
       },
     },
   },
+  ...tailwind.configs['flat/recommended'],
 ]);

@@ -7,10 +7,11 @@ const button = tv({
     type: {
       primary: 'btn-type-primary',
       secondary: 'btn-type-secondary',
+      sub: 'btn-type-sub',
       point: 'btn-type-point',
+      text: 'btn-type-text',
     },
     size: {
-      xs: 'btn-size-xs',
       sm: 'btn-size-sm',
       md: 'btn-size-md',
       lg: 'btn-size-lg',

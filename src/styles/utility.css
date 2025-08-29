@@ -1,0 +1,136 @@
+@layer components {
+  [class*='text-title-'],
+  [class*='text-body-'] {
+    line-height: 140%;
+    letter-spacing: -2%;
+  }
+
+  [class*='text-title-'] {
+    font-family: 'Pretendard Variable';
+  }
+
+  .text-title-1 {
+    font-size: var(--text-title-1);
+    letter-spacing: -0.48px;
+  }
+  .text-title-2 {
+    font-size: var(--text-title-2);
+    line-height: 145%;
+    letter-spacing: -0.44px;
+  }
+  .text-title-3 {
+    font-size: var(--text-title-3);
+    letter-spacing: -0.4px;
+  }
+  .text-title-4 {
+    font-size: var(--text-title-4);
+    letter-spacing: -0.36px;
+  }
+  .text-title-5 {
+    font-size: var(--text-title-5);
+    letter-spacing: -0.32px;
+  }
+
+  .text-body-1 {
+    font-size: var(--text-body-1);
+    letter-spacing: -0.4px;
+  }
+  .text-body-2 {
+    font-size: var(--text-body-2);
+    letter-spacing: -0.36px;
+  }
+  .text-body-3 {
+    font-size: var(--text-body-3);
+    letter-spacing: -0.32px;
+  }
+  .text-body-4 {
+    font-size: var(--text-body-4);
+    letter-spacing: -0.3px;
+  }
+  .text-body-5 {
+    font-size: var(--text-body-5);
+    letter-spacing: -0.28px;
+  }
+  .text-body-6 {
+    font-size: var(--text-body-6);
+    letter-spacing: -0.26px;
+  }
+  .text-body-7 {
+    font-size: var(--text-body-7);
+    letter-spacing: -0.24px;
+  }
+  .text-body-8 {
+    font-size: var(--text-body-8);
+    letter-spacing: -0.22px;
+  }
+  .text-body-9 {
+    font-size: var(--text-body-9);
+    letter-spacing: -0.2px;
+  }
+  .text-body-10 {
+    font-size: var(--text-body-10);
+    letter-spacing: -0.18px;
+  }
+}
+
+img.img {
+  width: 100%;
+  height: auto;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-color: var(--color-gray-20); /* Firefox */
+  scrollbar-width: thin; /* Firefox */
+
+  &::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px; /* Rounded corners for the thumb */
+    background-color: var(--color-gray-20); /* Color of the scrollbar thumb */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: grey; /* Color of the scrollbar track */
+  }
+}
+
+@utility mask {
+  display: block;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: currentColor;
+}
+
+.max-w-layout {
+  max-width: var(--layout-max-width);
+}

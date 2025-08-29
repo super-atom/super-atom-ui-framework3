@@ -5,65 +5,91 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
 
-  /*PrimaryColors*/
-  --color-primary-1: #009178;
-  --color-primary-2: #148071;
+  /** Responsive */
+  --breakpoint-xs: 280px;
+  --breakpoint-sm: 320px;
 
-  /* Point Colors */
-  --color-point-charcoal: #282a2c;
+  /** Foundation - Primary Colors */
+  --color-primary-dark: #222326;
+  --color-primary-dark1: #7f8186;
+  --color-primary-dark2: #c1c4ce;
+  --color-primary-dark3: #e0e1e5;
+  --color-primary-dark4: #f4f4f5;
 
-  /* Semantic Colors */
-  --color-semantic-error: #f44242;
-  --color-semantic-notice: #ff6868;
-  --color-semantic-warning: #ff8515;
-  --color-semantic-caution: #ffbd15;
-  --color-semantic-general: #3ac392;
-  --color-semantic-success: #2c91ee;
+  /** Foundation - Point Colors */
+  --color-point-t-blue: #3515cd;
+  --color-point-blue1: #533afe;
+  --color-point-blue2: #6c77fe;
+  --color-point-blue3: #9aaafe;
+  --color-point-blue4: #d1dafe;
 
-  /* Gray Scale */
+  /** Foundation - Semantic Colors */
+  --color-semantic-red: #ea3845;
+  --color-semantic-orange: #ff8914;
+  --color-semantic-yellow: #ffc31f;
+  --color-semantic-green: #3eb445;
+  --color-semantic-blue: #4286ff;
+
+  /** Contents - Gray Scale */
   --color-gray-white: #ffffff;
-  --color-gray-3: #f7f9fb;
-  --color-gray-5: #eff2f5;
-  --color-gray-10: #e6e9eb;
-  --color-gray-15: #dadde1;
-  --color-gray-20: #cccfd4;
-  --color-gray-30: #babfc7;
-  --color-gray-40: #acafb5;
-  --color-gray-50: #999da6;
-  --color-gray-60: #7d818a;
-  --color-gray-70: #696c75;
-  --color-gray-80: #56585e;
-  --color-gray-90: #43464a;
-  --color-gray-95: #282a2c;
-  --color-gray-black: #1a1b1c;
+  --color-gray-5: #f2f3f6;
+  --color-gray-10: #e8ebf2;
+  --color-gray-15: #e0e1e5;
+  --color-gray-20: #d6d8de;
+  --color-gray-25: #caccd3;
+  --color-gray-30: #b8bac3;
+  --color-gray-40: #95979e;
+  --color-gray-50: #7f8186;
+  --color-gray-60: #626468;
+  --color-gray-70: #565960;
+  --color-gray-80: #4a4c51;
+  --color-gray-90: #404247;
+  --color-gray-95: #222326;
+  --color-gray-black: #111214;
 
-  /* Contents/Background */
-  --color-bg-white: #ffffff;
-  --color-bg-gray: #f4f4f4;
-  --color-overlay-scrim: rgba(0, 0, 0, 0.7);
+  /** Contents - Background Colors */
+  --color-bg-light: #ffffff;
+  --color-bg-scrim: #808080;
 
-  /* Button Primary */
-  --color-btn-primary-default: #009178;
-  --color-btn-primary-pressed: #148071;
-  --color-btn-primary-disabled: rgba(0, 145, 120, 0.3);
+  /** Button States - Dark */
+  --color-btn-dark-default: #222326;
+  --color-btn-dark-pressed: #111214;
+  --color-btn-dark-disabled: #222326;
 
-  /* Button Secondary */
-  --color-btn-secondary-default: #eff2f5;
-  --color-btn-secondary-pressed: #e6e9eb;
-  --color-btn-secondary-disabled: rgba(239, 242, 245, 0.5);
+  /** Button States - Gray */
+  --color-btn-gray-default: #eeeff2;
+  --color-btn-gray-pressed: #d6d8de;
+  --color-btn-gray-disabled: #eeeff2;
 
-  /* Button Point */
-  --color-btn-point-default: #d7ede6;
-  --color-btn-point-pressed: #c3e7df;
-  --color-btn-point-disabled: rgba(224, 243, 237, 0.5);
+  /** Button States - White */
+  --color-btn-white-default: #ffffff;
+  --color-btn-white-pressed: #eeeff1;
+  --color-btn-white-disabled: #eeeff2;
 
-  /* Sub Colors */
-  --color-sub-white-default: #ffffff;
-  --color-sub-white-pressed: #f5f8fa;
-  --color-sub-white-disabled: #ffffff80;
-  --color-sub-black-default: #56585e;
-  --color-sub-black-pressed: #43464a;
-  --color-sub-black-disabled: #56585e80;
+  /** Outline */
+  --color-outline: #111214;
+
+  /** Title Typography Scale */
+  --text-title-1: 24px;
+  --text-title-2: 22px;
+  --text-title-3: 20px;
+  --text-title-4: 18px;
+  --text-title-5: 16px;
+
+  /** Body Typography Scale */
+  --text-body-1: 20px;
+  --text-body-2: 18px;
+  --text-body-3: 16px;
+  --text-body-4: 15px;
+  --text-body-5: 14px;
+  --text-body-6: 13px;
+  --text-body-7: 12px;
+  --text-body-8: 11px;
+  --text-body-9: 10px;
+  --text-body-10: 9px;
+
+  /** Layout */
+  --layout-max-width: 600px;
 }
 
 @font-face {
@@ -73,4 +99,87 @@
     format('woff2-variations');
   font-family: 'Pretendard Variable';
   font-display: swap;
+}
+
+/** Typography */
+@utility text-title-1 {
+  font-size: var(--text-title-1);
+  line-height: 140%;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.48px;
+}
+@utility text-title-2 {
+  font-size: var(--text-title-2);
+  line-height: 145%;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.44px;
+}
+@utility text-title-3 {
+  font-size: var(--text-title-3);
+  line-height: 140%;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.4px;
+}
+@utility text-title-4 {
+  font-size: var(--text-title-4);
+  line-height: 140%;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.36px;
+}
+@utility text-title-5 {
+  font-size: var(--text-title-5);
+  line-height: 140%;
+  font-family: 'Pretendard Variable';
+  letter-spacing: -0.32px;
+}
+
+@utility text-body-1 {
+  font-size: var(--text-body-1);
+  line-height: 140%;
+  letter-spacing: -0.4px;
+}
+@utility text-body-2 {
+  font-size: var(--text-body-2);
+  line-height: 140%;
+  letter-spacing: -0.36px;
+}
+@utility text-body-3 {
+  font-size: var(--text-body-3);
+  line-height: 140%;
+  letter-spacing: -0.32px;
+}
+@utility text-body-4 {
+  font-size: var(--text-body-4);
+  line-height: 140%;
+  letter-spacing: -0.3px;
+}
+@utility text-body-5 {
+  font-size: var(--text-body-5);
+  line-height: 140%;
+  letter-spacing: -0.28px;
+}
+@utility text-body-6 {
+  font-size: var(--text-body-6);
+  line-height: 140%;
+  letter-spacing: -0.26px;
+}
+@utility text-body-7 {
+  font-size: var(--text-body-7);
+  line-height: 140%;
+  letter-spacing: -0.24px;
+}
+@utility text-body-8 {
+  font-size: var(--text-body-8);
+  line-height: 140%;
+  letter-spacing: -0.22px;
+}
+@utility text-body-9 {
+  font-size: var(--text-body-9);
+  line-height: 140%;
+  letter-spacing: -0.2px;
+}
+@utility text-body-10 {
+  font-size: var(--text-body-10);
+  line-height: 140%;
+  letter-spacing: -0.18px;
 }

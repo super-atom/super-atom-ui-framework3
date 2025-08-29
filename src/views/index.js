@@ -1,7 +1,5 @@
 $(() => {
-  console.log('guide.js');
-
-  const title = 'Publishing Guide List';
+  const title = 'Publishing List';
   const tableData = [
     /*
         {
@@ -18,8 +16,8 @@ $(() => {
               status: '',
               create: '',
               update: '',
-              worker: '', log: [
-                //{ date: '2025.02.24', text: '', },
+              worker: '이름', log: [
+                //{ date: '2025.01.01', text: '', },
               ],
             },
           ],
@@ -29,43 +27,118 @@ $(() => {
       depth1: '가이드',
       data: [
         {
-          depth2: '컴포넌트',
-          depth3: 'Typography System',
+          depth2: 'Log',
+          depth3: '',
           depth4: '',
           depth5: '',
           depth6: '',
           id: '',
-          path: '/guide/typography.html',
+          path: '/html/guide/log.html',
           status: 'except',
           create: '2025.00.00',
-          worker: '',
+          worker: '익명',
           log: [],
         },
         {
-          depth2: '컴포넌트',
-          depth3: 'Color System',
+          depth2: 'Design System',
+          depth3: 'Color',
           depth4: '',
           depth5: '',
           depth6: '',
           id: '',
-          path: '/guide/color.html',
+          path: '/html/guide/color.html',
           status: 'except',
           create: '2025.00.00',
-          worker: '',
+          worker: '익명',
           log: [],
         },
         {
-          depth2: '컴포넌트',
+          depth2: '',
+          depth3: 'Typography',
+          depth4: '',
+          depth5: '',
+          depth6: '',
+          id: '',
+          path: '/html/guide/typography.html',
+          status: 'except',
+          create: '2025.00.00',
+          worker: '익명',
+          log: [],
+        },
+        {
+          depth2: 'Components',
           depth3: 'Button',
           depth4: '',
           depth5: '',
           depth6: '',
           id: '',
-          path: '/html/guide/foundation.html',
+          path: '/html/guide/button.html',
+          status: 'except',
+          create: '2025.00.00',
+          worker: '익명',
+          log: [],
+        },
+        {
+          depth2: '',
+          depth3: 'Form',
+          depth4: '',
+          depth5: '',
+          depth6: '',
+          id: '',
+          path: '/html/guide/form.html',
+          status: 'except',
+          create: '2025.00.00',
+          worker: '익명',
+          log: [],
+        },
+        {
+          depth2: '',
+          depth3: 'Checkbox',
+          depth4: '',
+          depth5: '',
+          depth6: '',
+          id: '',
+          path: '/html/guide/checkbox.html',
+          status: 'except',
+          create: '2025.00.00',
+          worker: '익명',
+          log: [],
+        },
+        {
+          depth2: '',
+          depth3: 'Select',
+          depth4: '',
+          depth5: '',
+          depth6: '',
+          id: '',
+          path: '/html/guide/select.html',
+          status: 'except',
+          create: '2025.00.00',
+          worker: '익명',
+          log: [],
+        },
+      ],
+    },
+    {
+      depth1: '샘플',
+      data: [
+        {
+          depth2: '샘플',
+          depth3: '',
+          depth4: '',
+          depth5: '',
+          depth6: '',
+          id: '',
+          path: '/html/sample.html',
           status: 'end',
           create: '2025.00.00',
-          worker: '',
-          log: [],
+          worker: '익명',
+          log: [
+            {
+              date: '2025.00.00',
+              text: '샘플 페이지 추가',
+            },
+          ],
         },
       ],
     },
@@ -140,6 +213,10 @@ $(() => {
       filteredRows = allRows.filter((row) => row.status === filteredStatus);
     }
 
+    // except 상태를 제외한 전체 건수 계산
+    const totalExcludingExcept = filteredRows.filter(
+      (row) => row.status !== 'except',
+    ).length;
     const total = filteredRows.length || allRows.length;
 
     // 상태별 카운트
@@ -150,19 +227,39 @@ $(() => {
       ).length;
     });
 
-    // 상태별 퍼센트
+    // '보류'와 '제외' 상태를 제외한 진행 대상 건수 계산
+    const progressTargetCount = Object.keys(statusInfo).reduce((sum, key) => {
+      if (key !== 'hold' && key !== 'except') {
+        // '보류'와 '제외' 제외
+        return sum + statusCounts[key];
+      }
+      return sum;
+    }, 0);
+
+    // 완료된 작업 건수 계산 (end, confirm, modify 상태)
+    const completedCount = ['end', 'confirm', 'modify'].reduce((sum, key) => {
+      return sum + statusCounts[key];
+    }, 0);
+
+    // 진행률 계산 (보류, 제외 제외한 상태들 중 완료된 비율)
+    const progressPercentage =
+      progressTargetCount > 0
+        ? Math.round((completedCount / progressTargetCount) * 100)
+        : 0;
+
+    // 상태별 퍼센트 (except 제외한 전체 기준)
     const statusPercentages = {};
     Object.keys(statusInfo).forEach((key) => {
-      statusPercentages[key] = total
-        ? Math.round((statusCounts[key] / total) * 100)
+      statusPercentages[key] = totalExcludingExcept
+        ? Math.round((statusCounts[key] / totalExcludingExcept) * 100)
         : 0;
     });
 
     // 리스트 HTML 생성 (각 상태별 클래스 매핑)
     let html = `
       <li class="status-list">
-        전체 : <span class="quantity">${total}</span>건
-        <span class="percentage"></span>
+        전체 : <span class="quantity">${totalExcludingExcept}</span>건
+        <span class="percentage">(${progressPercentage}%)</span>
       </li>
     `;
     Object.entries(statusInfo).forEach(([key, info]) => {

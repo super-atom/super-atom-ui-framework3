@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../../partials/meta}}
+    {{> ../../partials/link}}
+    {{> ../../partials/script}}
+    <script src="../../assets/libs/nice-select2/nice-select2.js"></script>
+    <link
+      rel="stylesheet"
+      href="../../assets/libs/nice-select2/nice-select2.css"
+    />
+    <title>Select</title>
+  </head>
+  <body class="p-[20px]">
+    <div>
+      <p class="text-title-1 mb-[10px] text-[20px] font-bold">Select</p>
+      <div class="flex flex-col gap-[10px]">
+        <select class="w-[110px]" id="ProgramTypeselect" class="select">
+          <option value="">타입 전체</option>
+          <option value="program1">일반</option>
+          <option value="program2">예약</option>
+          <option value="program3">응모</option>
+        </select>
+      </div>
+    </div>
+
+    <script>
+      NiceSelect.bind(document.getElementById('ProgramTypeselect'), {
+        placeholder: '타입 전체',
+      });
+    </script>
+  </body>
+</html>

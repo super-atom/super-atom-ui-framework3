@@ -1,0 +1,36 @@
+<div class="InputContainer InputBottomSheetContainer {{#if class}}{{class}}{{/if}}" data-state="{{#if error}}error{{else}}valid{{/if}}">
+  {{#if label}}
+    <div class="InputText__label-wrap">
+      <label for="{{ id }}" class="InputText__label">{{ label }}</label>
+      {{#if required}}<div class="required-asterisk ml-[4px]"></div>{{/if}}
+    </div>
+  {{/if}}
+  <div class="InputWrapper">
+    <input
+      type="text"
+      name="{{ name }}"
+      id="{{ id }}"
+      class="InputText input"
+      placeholder="{{ placeholder }}"
+      {{#if value}}value="{{value}}"{{/if}}
+      {{#if disabled}}disabled{{/if}}
+      readonly
+      {{#if data-select}}data-select="{{data-select}}"{{/if}}
+      {{#if required}}required{{/if}}
+      onclick="{{{onclick}}}"
+      data-bottomsheet-opener="{{data-bottomsheet-opener}}"
+      data-select=""
+    />
+    {{#if addEl}}{{{addEl}}}{{/if}}
+    {{#unless readonly}}
+    {{#unless disabled}}
+    {{#unless hideBtnInputDelete}}
+    <i class="bg-select-chevron-down w-[20px] h-[20px]"></i>
+    {{/unless}}
+    {{/unless}}
+    {{/unless}}
+  </div>
+  {{#if helpText}}
+    <p class="Input__help-text">{{ helpText }}</p>
+  {{/if}}
+</div>

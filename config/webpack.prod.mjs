@@ -8,8 +8,17 @@ import { cssLoaders } from './util.js';
 
 const configureOptimization = () => {
   return {
-    minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    minimize: false,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          compress: false, // 압축 옵션 비활성화
+          mangle: false, // 변수명 변경 비활성화
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
     splitChunks: {
       chunks: 'async',
       minSize: 20000,

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../../partials/meta}}
+    {{> ../../partials/link}}
+    {{> ../../partials/script}}
+    <title>Program Label</title>
+  </head>
+  <body class="p-[20px]">
+    <div>
+      <p class="text-title-1 mb-[10px] text-[20px] font-bold">Checkbox</p>
+      <div class="flex flex-col gap-[10px]">
+        <div class="checkbox-group">
+          <label class="checkbox__label">
+            <input type="checkbox" class="allCheck" />
+            <span class="checkbox__icon"></span>
+            <span class="checkbox__text">필수 약관 모두 동의</span>
+          </label>
+          <hr class="bg-gray-5 my-[20px] h-[1px] border-0" />
+          <!-- 250707 수정 : 필수 checkbox에 requied 추가 -->
+          <ul class="space-y-[20px]">
+            <li class="flex items-center justify-between">
+              <!-- 수정 : 250702 -->
+              <label class="checkbox__label">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  value="termsOfService1"
+                  required
+                />
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text"
+                  >(필수) T Factory 성수 이용약관</span
+                >
+              </label>
+              <button
+                type="button"
+                aria-label="T Factory 성수 이용약관 보기"
+                class="bg-term-arrow h-[16px] w-[16px]"
+              ></button>
+            </li>
+            <li class="flex items-center justify-between">
+              <label class="checkbox__label">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  value="termsOfService2"
+                  required
+                />
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text"
+                  >(필수) T Factory 개인정보 수집 및 이용 동의</span
+                >
+              </label>
+              <button
+                type="button"
+                aria-label="T Factory 개인정보 수집 및 이용 동의 보기"
+                class="bg-term-arrow h-[16px] w-[16px]"
+              ></button>
+            </li>
+            <li class="flex items-center justify-between">
+              <label class="checkbox__label">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  value="termsOfService3"
+                  required
+                />
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text"
+                  >(필수) 개인정보 제3자 제공 동의</span
+                >
+              </label>
+              <button
+                type="button"
+                aria-label="개인정보 제3자 제공 동의 보기"
+                class="bg-term-arrow h-[16px] w-[16px]"
+              ></button>
+            </li>
+            <li class="flex items-center justify-between">
+              <label class="checkbox__label">
+                <input type="checkbox" name="terms" value="termsOfService4" />
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text"
+                  >(선택) 광고성 정보 수신 및 마케팅 활용 동의
+                </span>
+              </label>
+              <button
+                type="button"
+                aria-label="광고성 정보 수신 및 마케팅 활용 동의 보기"
+                class="bg-term-arrow h-[16px] w-[16px]"
+              ></button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-[30px] space-y-[10px]">
+          <label class="checkbox__label" data-theme="program">
+            <input type="checkbox" />
+            <span class="checkbox__icon"></span>
+            <span class="checkbox__text">확인했어요</span>
+          </label>
+
+          <label class="checkbox__label" data-theme="program">
+            <input type="checkbox" />
+            <span class="checkbox__icon" data-type="radio"></span>
+            <span class="checkbox__text">Checkbox radio type</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkboxGroup = document.querySelector('.checkbox-group');
+
+        // 체크박스 상태 확인 함수
+        function updateButtonState() {
+          const individualCheckboxes = checkboxGroup.querySelectorAll(
+            'input[type="checkbox"]:not(.allCheck)',
+          );
+        }
+
+        // 체크박스 그룹 내의 모든 체크박스 감지 설정
+        const checkboxes = checkboxGroup.querySelectorAll(
+          'input[type="checkbox"]',
+        );
+        checkboxes.forEach(function (checkbox) {
+          checkbox.addEventListener('change', updateButtonState);
+        });
+
+        // 초기 상태 설정
+        updateButtonState();
+      });
+    </script>
+  </body>
+</html>

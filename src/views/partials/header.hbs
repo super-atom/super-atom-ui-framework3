@@ -1,7 +1,31 @@
-<header class="header" id="header">
-  <h1 class="bg-logo relative h-[24px] w-[100px]">
-    <a href="home.html" class="block h-full w-full"
-      ><span class="sr-only">Logo</span></a
+<header class="header{{#if invert}} header-invert{{/if}}" id="header">
+  <div class="flex justify-between">
+    {{#unless back}}
+    <button
+      type="button"
+      id="lnbOpenBtn"
+      class="btn relative"
+      aria-label="글로벌 네비게이션 메뉴 열기"
     >
-  </h1>
+      <i class="mask mask-header-menu text-gray-black h-[20px] w-[20px]"></i>
+    </button>
+    {{/unless}}
+    {{#if back}}
+    <button
+      type="button"
+      class="btn relative h-[20px] w-[20px]"
+      aria-label="이전 페이지로 돌아가기"
+    >
+      <i class="mask mask-header-back text-gray-black h-[16px] w-[16px]"></i>
+    </button>
+    {{/if}}
+
+    {{#if title}}
+    <p class="header__title">{{ title }}</p>
+    {{/if}}
+
+    {{#unless login}}
+    <a href="#" class="header__login text-body-5">로그인</a>
+    {{/unless}}
+  </div>
 </header>

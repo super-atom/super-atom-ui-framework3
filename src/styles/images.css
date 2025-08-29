@@ -1,0 +1,32 @@
+@layer components {
+  [class*='bg-'] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background: transparent;
+  }
+
+  i.mask {
+    display: block;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: currentColor;
+  }
+}
+@layer utilities {
+  .bg-header-menu {
+    background-image: url('../assets/images/icon_header-menu.svg');
+  }
+  i.mask.mask-header-menu {
+    mask-image: url('../assets/images/icon_header-menu.svg');
+    -webkit-mask-image: url('../assets/images/icon_header-menu.svg');
+  }
+  i.mask.mask-header-back {
+    mask-image: url('../assets/images/icon_header_back.svg');
+    -webkit-mask-image: url('../assets/images/icon_header_back.svg');
+  }
+}

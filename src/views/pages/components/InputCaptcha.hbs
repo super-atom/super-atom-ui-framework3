@@ -1,0 +1,36 @@
+<!-- data-state='valid'인 경우 체크 아이콘이 표시됨 -->
+<div
+  class="InputContainer InputTextContainer InputCaptchaContainer {{#if class}}{{
+    class
+  }}{{/if}}"
+  data-state="{{#if error}}error{{else}}valid{{/if}}"
+>
+  {{#if label}}
+  <div class="mb-[10px] flex items-start">
+    <label for="{{ id }}" class="InputText__label">{{ label }}</label>
+    {{#if required}}
+    <div class="required-asterisk ml-[4px]"></div>
+    {{/if}}
+  </div>
+  {{/if}}
+  <div class="InputWrapper">
+    <input
+      type="text"
+      name="{{ name }}"
+      id="{{ id }}"
+      placeholder="보안문자"
+      maxlength="6"
+      class="InputCaptcha input"
+      required
+    />
+    <button type="button" class="btn-input-delete hidden" tabindex="-1">
+      <span class="sr-only">입력값 삭제</span>
+    </button>
+    <i
+      class="InputCaptcha__icon-valid bg-input-complete relative right-[-6px] hidden h-[20px] w-[20px] shrink-0"
+    ></i>
+  </div>
+  {{#if helpText}}
+  <p class="Input__help-text">{{ helpText }}</p>
+  {{/if}}
+</div>

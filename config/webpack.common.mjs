@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import PATH from '../config/path.js';
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
@@ -14,10 +13,8 @@ const htmlPlugins = generateHtmlPlugins('../src/views/pages');
 
 export default {
   entry: {
-    style: './src/js/style.js',
-    common: './src/js/common.js',
-    component: './src/js/component.js',
-    guide: './src/js/guide.js',
+    style: './src/assets/js/style.js',
+    guide: './src/assets/js/guide.js',
   },
   target: ['web', 'es5'],
   output: {
@@ -104,7 +101,9 @@ export default {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/views/index.html', to: 'index.html' },
-        { from: 'src/public', to: 'public' },
+        { from: 'src/views/index.css', to: 'index.css' },
+        { from: 'src/views/index.js', to: 'index.js' },
+        { from: 'src/assets', to: 'assets' },
       ],
     }),
   ].concat(htmlPlugins),
@@ -148,13 +147,38 @@ function generateHtmlPlugins(templateDir) {
       .replace(/\.hbs$/, '.html');
     // guide 디렉토리 하위면 guide 번들 포함
     const isGuide = /[\\/]guide[\\/]/.test(filePath);
-    const chunks = isGuide
-      ? ['style', 'common', 'component', 'guide']
-      : ['style', 'common', 'component'];
+
+    let chunks = ['style'];
+    if (isGuide) {
+      chunks = ['style', 'guide'];
+    }
+
+    // 환경변수 및 상대경로 추가
+    const normalizedPath = relativePath.replace(/\\/g, '/'); // Windows 경로 구분자 정규화
+    const depth = normalizedPath.includes('/')
+      ? normalizedPath.split('/').length - 1
+      : 0;
+
+    // 빌드된 파일들이 html/ 폴더에 위치하므로 모든 파일에 +1 depth 적용
+    const actualDepth = depth + 1;
+
+    // 각 스크립트의 개별 경로 계산
+    const scriptBasePath = '../'.repeat(actualDepth) + 'assets/js/';
+
+    const templateParameters = {
+      ...json,
+      isDev: process.env.NODE_ENV === 'development',
+      relativePath: relativePath,
+      scriptPath: {
+        common: `${scriptBasePath}common.js`,
+        component: `${scriptBasePath}component.js`,
+      },
+    };
+
     return new HtmlWebpackPlugin({
       filename: `html/${relativePath}`,
       template: path.resolve(__dirname, filePath),
-      templateParameters: json,
+      templateParameters,
       minify: false,
       chunks,
     });

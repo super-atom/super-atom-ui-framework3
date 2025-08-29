@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {{> ../../partials/meta}}
+    {{> ../../partials/link}}
+    {{> ../../partials/script}}
+    <title>Buttons</title>
+  </head>
+  <body class="p-[20px]">
+    <div class="space-y-[30px]">
+      <div>
+        <p class="mb-[10px] text-[34px] font-bold">Type</p>
+        <div class="flex flex-col gap-[10px] [&>*]:w-fit">
+          <button class="{{twBtn 'primary' 'lg'}}">Primary button</button>
+          <button class="{{twBtn 'secondary' 'lg'}}">Secondary button</button>
+          <button class="{{twBtn 'sub' 'lg'}}">Sub button</button>
+          <!-- 250724 추가 -->
+          <button class="{{twBtn 'point' 'lg'}}">Point button</button>
+          <button class="{{twBtn 'text'}}">Text button</button>
+        </div>
+      </div>
+
+      <div>
+        <p class="mb-[10px] text-[34px] font-bold">Size</p>
+        <button class="{{twBtn 'primary' 'sm'}}">SM button</button>
+        <button class="{{twBtn 'primary' 'md'}}">MD button</button>
+        <button class="{{twBtn 'primary' 'lg'}}">LG button</button>
+      </div>
+      <div>
+        <p class="mb-[10px] text-[34px] font-bold">State</p>
+        <div class="flex flex-col gap-[10px] [&>*]:w-fit">
+          <div>
+            <button class="{{twBtn 'primary' 'lg'}}">Normal</button>
+            <button class="{{twBtn 'primary' 'lg'}}" disabled>Disabled</button>
+          </div>
+          <div>
+            <button class="{{twBtn 'secondary' 'lg'}}">Normal</button>
+            <button class="{{twBtn 'secondary' 'lg'}}" disabled>
+              Disabled
+            </button>
+          </div>
+          <div>
+            <button class="{{twBtn 'sub' 'lg'}}">Normal</button>
+            <button class="{{twBtn 'sub' 'lg'}}" disabled>Disabled</button>
+          </div>
+          <!-- 250724 추가 -->
+          <div>
+            <button class="{{twBtn 'point' 'lg'}}">Normal</button>
+            <button class="{{twBtn 'point' 'lg'}}" disabled>Disabled</button>
+          </div>
+          <div>
+            <button class="{{twBtn 'text'}}">Normal</button>
+            <button class="{{twBtn 'text'}}" disabled>Disabled</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

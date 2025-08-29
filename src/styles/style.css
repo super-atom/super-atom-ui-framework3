@@ -1,14 +1,24 @@
 @import 'base.css';
-@import 'button.css';
+@import 'utility.css';
+@import 'images.css';
+@import './components/components.css';
+@import './page.css';
 
-body {
-  font-family: var(--font-pretendard);
-}
+@layer base {
+  *:focus {
+    outline: none;
+  }
 
-@layer utilities {
-  /* .bg-logo {
-    background-image: url('../assets/images/logo.png');
-    background-position: center;
-    background-size: cover;
-  } */
+  body {
+    margin: 0 auto;
+    background: #ffffff;
+    color: var(--color-gray-black);
+    font-family: var(--font-pretendard);
+  }
+
+  a,
+  input,
+  button {
+    @apply focus-visible:outline-[var(--color-outline)] focus-visible:outline-[1px];
+  }
 }
